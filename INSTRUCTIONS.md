@@ -56,7 +56,7 @@ Your task will be to create a simple single page application that loads
 friendly format.  The exact format of how to display the directory is not
 specified, but you can consider Windows File Explorer, Finder on Mac, or the
 trivial [example.html](./example.html) included here as inspiration for how to
-display the directory tree.  Feel free to make this is simple or involved as
+display the directory tree.  Feel free to make this as simple or involved as
 you would like, but keep in mind that we don't expect more than a couple of
 hours to be spent on it.
 
