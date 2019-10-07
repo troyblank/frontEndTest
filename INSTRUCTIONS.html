@@ -1,0 +1,81 @@
+<h1 id="zeconomyfrontendcodingtest">Zeconomy Frontend Coding Test</h1>
+<h2 id="background">Background</h2>
+<p>The <code>tree</code> command on Linux/MacOS gives ascii representation of a directory
+tree like the following</p>
+<pre><code>feather/
+├── pom.xml
+└── src
+    ├── main
+    │   └── java
+    │       └── org
+    │           └── codejargon
+    │               └── feather
+    │                   ├── FeatherException.java
+    │                   ├── Feather.java
+    │                   ├── Key.java
+    │                   └── Provides.java
+    └── test
+        └── java
+            └── org
+                └── codejargon
+                    └── feather
+                        ├── AmbiguousModuleTest.java
+                        ├── CircularDependencyTest.java
+                        ├── DependencyTest.java
+                        ├── FieldInjectionTest.java
+                        ├── ModuleOverrideTest.java
+                        ├── NamedDependencyTest.java
+                        ├── PojoProvidedThroughModuleTest.java
+                        ├── PolymorphicDependencyTest.java
+                        ├── ProviderInjectionTest.java
+                        ├── QualifiedDependencyTest.java
+                        ├── SingletonTest.java
+                        └── TransitiveDependencyTest.java
+</code></pre>
+<p>By passing the <code>-J</code> flag, you can get a JSON representation of the directory
+tree like that included in <a href="./listing.json">listing.json</a>.  The data in the
+JSON representation is a list of objects.  Each object has a <code>type</code> field that
+can be either <code>directory</code> if that node is a directory, or <code>file</code> if the node is
+a file.  All nodes have a <code>name</code> field that gives the name of the directory
+node.  Additionally, if the <code>type</code> is <code>directory</code>, then a <code>contents</code> field is
+included is a list of the files/directories in that directory.</p>
+<p>For referrence, the directory tree that is represented by
+<a href="./listing.json">listing.json</a> can be found as part of the open source library
+<a href="https://github.com/zsoltherpai/feather/tree/master/feather">feather</a>.</p>
+<h2 id="task">Task</h2>
+<p>Your task will be to create a simple single page application that loads
+<a href="./listing.json">listing.json</a>, parses it, and displays the contents in a human
+friendly format.  The exact format of how to display the directory is not
+specified, but you can consider Windows File Explorer, Finder on Mac, or the
+trivial <a href="./example.html">exmaple.html</a> included here as inspiration for how to
+display the directory tree.  Feel free to make this is simple or involved as
+you would like, but keep in mind that we don't expect more than a couple of
+hours to be spent on it.</p>
+<p>Additionally, the single page app should have a simple search box that allows
+the user to search for a file.  If the filename the user types in is in the
+directory listing, that file should be highlighted in some way (e.g. made bold,
+background color changed, or the containing element moved into view).</p>
+<h2 id="rules">Rules</h2>
+<ol>
+<li>Your work must be your own.  While you can certainly use online resources
+and any referrences for help, copying complete solutions from elsewhere is
+not allowed. We will discuss your submission in person in the next stage of
+the interview process, so make sure you understand the code you submit.</li>
+<li>You may use any third party libraries you want provided the third party
+library does not complete the entirity of this task.  E.g. if you find a
+library that parses and displays the output of <code>tree -J</code> that would not be
+allowed.  However, a generic tree react component would be acceptable.</li>
+<li>Any third party libraries you use should be clearly marked as such, either
+by including them through a packaging system (e.g. packages.json), or
+through comments/documentation.</li>
+<li>You will be given 48 hours to complete the task.  You may take as much time
+as you want, though we don't expect more than a few hours of effort.</li>
+<li>Any instructions needed to run or build the application should be included
+as part of the submission.</li>
+<li>While we will consider all aspects of your submission, we will prioritize
+functionality over design.  In other words, we would prefer to see an ugly
+functional submission that a beatiful pixel perfect non-functioning
+submission.</li>
+<li>If you have any questions or uncertainty about what we want, feel free to
+reach out to us.</li>
+</ol>
