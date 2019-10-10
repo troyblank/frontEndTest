@@ -1,0 +1,10 @@
+{
+    "extends": "@troyblank/eslint-config-troyblank/configs/react.js",
+
+    "globals": {
+        "after": true,
+        "beforeEach": true,
+        "describe": true,
+        "it": true
+    }
+}
