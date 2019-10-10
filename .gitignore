@@ -1,0 +1,27 @@
+#name .gitignore
+
+# NODE #
+#########
+node_modules
+npm-debug.log
+package-lock.json
+
+# NEXT #
+########
+.next
+out
+
+# SASS #
+########
+.sass-cache
+*.css.map
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
