@@ -1,0 +1,24 @@
+.node {
+    list-style-type: none;
+}
+
+.node--folder {
+    font-family: 'Bitter', serif;
+
+    &:before {
+        content: '\1F4C1';
+    }
+}
+
+.node--file {
+    font-family: 'Raleway', serif;
+
+    &:before {
+        content: '\1F4C4';
+    }
+}
+
+.node__name {
+    display: inline-block;
+    padding: 0 0 .5rem .5rem;
+}
