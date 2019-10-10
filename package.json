@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@babel/register": "7.6.2",
+    "@testing-library/react": "9.3.0",
     "@troyblank/eslint-config-troyblank": "1.1.0",
     "@troyblank/mocha-base-troyblank": "1.0.0",
     "@troyblank/sasslint-config-troyblank": "1.0.0",
