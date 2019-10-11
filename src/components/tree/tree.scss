@@ -1,6 +1,10 @@
 @import '../../sass/colors';
 
 .tree {
+    margin: 2rem;
+}
+
+.tree__list {
     ul {
         margin-left: .5rem;
         padding-left: .5rem;

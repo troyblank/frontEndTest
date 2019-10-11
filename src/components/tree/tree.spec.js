@@ -15,8 +15,10 @@ describe('Tree', () => {
         const listing = [structure];
         const wrapper = shallow(<Tree dispatch={sinon.spy()} treeStore={{ listing }} />);
 
+        assert.isTrue(wrapper.find('.tree').exists());
+        assert.isTrue(wrapper.find('input#search').exists());
         assert.isTrue(wrapper.contains(
-          <ul className={'tree'}>
+          <ul className={'tree__list'}>
             <Node structure={structure} />
           </ul>
         ));
@@ -26,6 +28,18 @@ describe('Tree', () => {
         const dispatch = sinon.spy();
 
         render(<Tree dispatch={dispatch} />);
+
+        assert.isTrue(dispatch.calledOnce);
+    });
+
+    it('should handle making a search', () => {
+        const listing = [chance.word()];
+        const dispatch = sinon.spy();
+        const value = chance.word();
+        const wrapper = shallow(<Tree dispatch={dispatch} treeStore={{ listing }} />);
+        const input = wrapper.find('input#search');
+
+        input.simulate('change', { target: { value } });
 
         assert.isTrue(dispatch.calledOnce);
     });

@@ -3,8 +3,10 @@ import Chance from 'chance';
 import sinon from 'sinon';
 import {
     FETCHED_LISTING,
+    SEARCHED_LISTING,
     fetchedListing,
-    getListing
+    getListing,
+    searchListing
 } from './actions';
 
 describe('Tree Actions', () => {
@@ -23,5 +25,12 @@ describe('Tree Actions', () => {
         getListing()(dispatch);
 
         assert.isFalse(dispatch.called);
+    });
+
+    it('should be able to generate a search listing action', () => {
+        const searchValue = chance.word();
+        const action = searchListing(searchValue);
+
+        assert.deepEqual(action, { type: SEARCHED_LISTING, searchValue });
     });
 });
