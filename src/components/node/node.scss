@@ -18,6 +18,12 @@
     }
 }
 
+.node--not-in-search {
+    & > .node__name, &:before {
+        opacity: .25
+    };
+}
+
 .node__name {
     display: inline-block;
     padding: 0 0 .5rem .5rem;

@@ -1,10 +1,15 @@
 import React, { useEffect } from 'react';
-import { getListing } from './actions';
+import { throttle } from 'lodash';
+import { getListing, searchListing } from './actions';
 import { Node } from '..';
 import './tree.scss';
 
 export default function Tree({ dispatch, treeStore = {} }) {
     const { listing } = treeStore;
+
+    const onSearch = throttle((value) => {
+        dispatch(searchListing(value));
+    }, 1000);
 
     useEffect(() => {
         dispatch(getListing());
@@ -13,9 +18,19 @@ export default function Tree({ dispatch, treeStore = {} }) {
     // This assumes there is only one root node.
     if (listing) {
         return (
-          <ul className={'tree'}>
-            <Node structure={listing[0]} />
-          </ul>
+          <div className="tree">
+            <label htmlFor={'search'}>Search: </label>
+            <input
+              type={'text'}
+              name={'search'}
+              id={'search'}
+              onChange={(e) => { onSearch(e.target.value); }}
+            />
+            <hr />
+            <ul className={'tree__list'}>
+              <Node structure={listing[0]} />
+            </ul>
+          </div>
         );
     }
 
